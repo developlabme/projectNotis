@@ -5,4 +5,4 @@
 
 ### Changes:
 
-* Se inicia la estructura del sistema de archivos para el proyecto NOTIS (issue ´DVOP-22´).
+* Se inicia la estructura del sistema de archivos para el proyecto NOTIS (issue `DVOP-22`).
