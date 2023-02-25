@@ -35,7 +35,9 @@ pipeline {
     }
 
     stage('Build') {
-      echo 'construyendo app...'
+      steps {
+        echo 'construyendo app...'
+      }
     }
 
   }
