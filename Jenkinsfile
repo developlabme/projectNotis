@@ -17,7 +17,7 @@ pipeline {
         stage('3-part') {
           steps {
             echo 'Instalando dependencias de 3ro...'
-            sh 'apt update'
+            echo 'Instalando actualizaciones del sistema operativo'
             sleep 15
           }
         }
