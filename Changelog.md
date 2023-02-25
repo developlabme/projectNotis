@@ -5,6 +5,8 @@
 
 ### Changes:
 
+* Liberando cambios
+
 * Implementando Pipeline sobre branch develop (env `test`).
 
 * Creando API User para inicio de sersión con correo (issue `DVOP-6`).
