@@ -40,6 +40,12 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        echo 'corriendo pruebas de integracion...'
+      }
+    }
+
   }
   environment {
     NODE_ENV = 'development'
