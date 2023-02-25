@@ -13,6 +13,3 @@ sleep 10;
 
 echo "Lanzando las primeras pruebas...";
 sleep 10;
-
-
-exit -100

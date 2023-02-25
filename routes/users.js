@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new', function(req, res, next) {
-  ressend('creando un nuevo usuario...');
+  res.send('creando un nuevo usuario...');
 });
 
 module.exports = router;
