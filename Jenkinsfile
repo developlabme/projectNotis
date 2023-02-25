@@ -1,21 +1,48 @@
 pipeline {
-    agent any
+  agent any
+  stages {
+    stage('Install') {
+      parallel {
+        stage('app') {
+          environment {
+            DEBUG = 'false'
+          }
+          steps {
+            echo 'Instalando dependencias...'
+            sh 'sleep 10'
+            sleep 45
+          }
+        }
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
+        stage('3-part') {
+          steps {
+            echo 'Instalando dependencias de 3ro...'
+            sh 'apt update'
+            sleep 15
+          }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
+
+        stage('db') {
+          steps {
+            echo 'Instalando base de datos...'
+            sh '''echo "instalando mysql-server"
+                # apt install -y mysql-server'''
+            sleep 30
+          }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+
+      }
     }
+
+    stage('Build') {
+      echo 'construyendo app...'
+    }
+
+  }
+  environment {
+    NODE_ENV = 'development'
+    NODE_APP = 'notis'
+    DB_NAME = 'test'
+    DB_PORT = '27017'
+  }
 }
